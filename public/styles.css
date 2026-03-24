@@ -1,0 +1,66 @@
+:root {
+  color-scheme: dark;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, sans-serif;
+}
+body {
+  margin: 0;
+  background: #10131a;
+  color: #e9ecf1;
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 1.5rem;
+  background: #141a23;
+  border-bottom: 1px solid #2a3140;
+}
+main { padding: 1rem; max-width: 1100px; margin: auto; }
+.card {
+  background: #1b2230;
+  border: 1px solid #2f394e;
+  border-radius: 12px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+.hidden { display: none; }
+.row { display: flex; gap: .5rem; margin-top: .7rem; }
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+input, select, button, textarea {
+  background: #0f141d;
+  border: 1px solid #3a445a;
+  color: #f2f5fb;
+  border-radius: 8px;
+  padding: .55rem;
+}
+button { cursor: pointer; }
+button.danger { background: #7b1111; border-color: #af2222; font-weight: 700; }
+ul { list-style: none; padding: 0; margin: .5rem 0; }
+li { padding: .45rem; border-bottom: 1px solid #2d3446; }
+.muted { color: #a7b0bf; }
+#player-list img {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+  vertical-align: middle;
+  margin-right: .5rem;
+}
+dialog {
+  border: 1px solid #334057;
+  border-radius: 12px;
+  background: #1a2130;
+  color: #fff;
+  width: min(92vw, 420px);
+}
+#avatar-canvas {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  border: 1px solid #44506b;
+  display: block;
+  margin: .5rem auto;
+  background: #0f141d;
+}
+@media (max-width: 840px) {
+  .grid-2 { grid-template-columns: 1fr; }
+}

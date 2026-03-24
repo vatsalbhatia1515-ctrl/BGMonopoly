@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BGMonopoly Multiplayer</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <header>
+    <h1>BGMonopoly</h1>
+    <div id="me"></div>
+  </header>
+
+  <main>
+    <section class="card" id="entry-card">
+      <h2>Welcome</h2>
+      <p>Guest login only. Your browser keeps a guest identity for automatic re-login.</p>
+      <button id="guest-login-btn">Continue as Guest</button>
+    </section>
+
+    <section class="card hidden" id="lobby-actions">
+      <h2>Room Lobby</h2>
+      <div class="row">
+        <button id="create-room-btn">Create Room</button>
+      </div>
+      <div class="row">
+        <input id="join-code-input" placeholder="Enter room code" />
+        <button id="join-room-btn">Join Room</button>
+      </div>
+      <p class="muted">Room code example: Hjxnk875-style random code.</p>
+    </section>
+
+    <section class="card hidden" id="room-card">
+      <h2>Room <span id="room-code"></span></h2>
+      <div id="room-status"></div>
+
+      <div class="grid-2">
+        <div>
+          <h3>Settings (Host only, pre-game)</h3>
+          <label>Maximum players
+            <select id="maximumPlayers">
+              <option>2</option><option>3</option><option>4</option><option>5</option><option selected>6</option>
+            </select>
+          </label>
+          <label>Starting cash
+            <select id="startingCash">
+              <option>500</option><option>1000</option><option selected>1500</option><option>2000</option><option>2500</option><option>3000</option>
+            </select>
+          </label>
+          <label><input type="checkbox" id="evenBuild" checked /> Even build</label>
+          <label><input type="checkbox" id="mortgage" checked /> Mortgage enabled</label>
+          <label><input type="checkbox" id="noRentInPrison" /> Don't collect rent while in prison</label>
+          <label><input type="checkbox" id="auction" checked /> Auction unbought properties</label>
+          <label><input type="checkbox" id="vacationCash" /> Vacation cash</label>
+          <label><input type="checkbox" id="doubleRentOnSet" checked /> x2 rent on full set</label>
+
+          <div class="row">
+            <button id="save-settings-btn">Save Settings</button>
+            <button id="start-game-btn">Start Game</button>
+            <button id="leave-room-btn">Leave</button>
+          </div>
+        </div>
+
+        <div>
+          <h3>Players</h3>
+          <ul id="player-list"></ul>
+          <button class="danger" id="bankrupt-btn">BANKRUPT</button>
+        </div>
+      </div>
+
+      <div class="grid-2">
+        <div>
+          <h3>Trade</h3>
+          <select id="trade-target"></select>
+          <textarea id="trade-offer" rows="3" placeholder="Offer details, e.g. Boardwalk for $400"></textarea>
+          <button id="send-trade-btn">Send Trade Offer</button>
+          <ul id="trade-list"></ul>
+        </div>
+        <div>
+          <h3>Room Events</h3>
+          <ul id="event-list"></ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <dialog id="username-modal">
+    <h3>Set a unique username</h3>
+    <input id="username-input" minlength="3" maxlength="20" placeholder="Unique username" />
+    <button id="username-next-btn">Next</button>
+  </dialog>
+
+  <dialog id="avatar-modal">
+    <h3>Upload profile image</h3>
+    <input id="avatar-file" type="file" accept="image/*" />
+    <label>Zoom <input id="avatar-zoom" type="range" min="1" max="3" step="0.01" value="1" /></label>
+    <canvas id="avatar-canvas" width="220" height="220"></canvas>
+    <button id="avatar-next-btn">Create Account</button>
+  </dialog>
+
+  <script src="/app.js"></script>
+</body>
+</html>
