@@ -1,0 +1,9 @@
+{
+  "name": "bgmonopoly",
+  "version": "1.0.0",
+  "description": "Multiplayer Monopoly room prototype",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  }
+}
